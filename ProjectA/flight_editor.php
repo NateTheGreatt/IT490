@@ -57,9 +57,10 @@
 
 include("inc/db.php");
 
+// This collects all of the data from the flight table and makes it into a JSON object
+
 $flightData = "";
 $i = 0;
-
 $query = "SELECT FlightNumber,DestinationCode,OriginCode,TailNumber,CrewID,SkidID,DepartureTime,ArrivalTime FROM flight";
 $result = mysql_query($query) or die($query."<br/><br/>".mysql_error());
 while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
@@ -79,6 +80,9 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
     $i++;
 }
 
+
+// This collects all AirportCodes and formats them like so: "DAL, LAX, NWK, etc"
+
 $airportOptions = "";
 $i = 0;
 $query = "SELECT AirportCode FROM airport";
@@ -91,6 +95,9 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
 	}
 	$i++;
 }
+
+
+// Collects all TailNumbers and formats them like above
 
 $tailNumberOptions = "";
 $i = 0;
@@ -105,6 +112,9 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
 	$i++;
 }
 
+
+// Collects all CrewIDs
+
 $crewIdOptions = "";
 $i = 0;
 $query = "SELECT CrewID FROM aircrew";
@@ -117,6 +127,9 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
 	}
 	$i++;
 }
+
+
+// Collects all SkidIDs
 
 $skidIdOptions = "";
 $i = 0;
