@@ -3,6 +3,8 @@ include("inc/db.php");
 
 $array = json_decode($_POST['data'], true);
 
+print_r($array);
+
 $FlightNumber = $array['FlightNumber'];
 $DestinationCode = mysql_escape_String($array['DestinationCode']);
 $OriginCode = mysql_escape_String($array['OriginCode']);
@@ -26,16 +28,5 @@ WHERE
 	FlightNumber=$FlightNumber
 ";
 
-mysql_query($sql) or die ("Error in query: ".mysql_error());
-
-echo "Row updated.<br /><br />";
-echo "FlightNumber: ".$array['FlightNumber']."<br />";
-echo "DestinationCode: ".$array['DestinationCode']."<br />";
-echo "OriginCode: ".$array['OriginCode']."<br />";
-echo "TailNumber: ".$array['TailNumber']."<br />";
-echo "CrewID: ".$array['CrewID']."<br />";
-echo "SkidID: ".$array['SkidID']."<br />";
-echo "DepartureTime: ".$array['DepartureTime']."<br />";
-echo "ArrivalTime: ".$array['ArrivalTime']."<br />";
-
+mysql_query($sql) or die ("Error in query: ".mysql_error())
 ?>

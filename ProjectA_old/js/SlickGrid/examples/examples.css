@@ -44,8 +44,6 @@ li {
   color: black;
   height: 24px;
   line-height: 24px;
-  margin-bottom:-14px;
-  width:100%;
 }
 
 .grid-header label {
@@ -83,35 +81,6 @@ li {
   position: absolute;
   top: 0px;
   left: 650px;
-}
-
-#ajax-panel {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border: 1px solid silver;
-  background: #f0f0f0;
-  padding: 4px;
-  margin-bottom: 20px;
-  width: 320px;
-  position: absolute;
-  top: 200px;
-  left: 810px;
-}
-
-.add-new-row {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border: 1px solid silver;
-  background: #f0f0f0;
-  margin-bottom: 20px;
-  width: 800px;
-  position: absolute;
-  top:525px;
-  z-index:-1;
-}
-
-.add-new-row table {
-	width:100%;
 }
 
 /* Individual cell styles */
