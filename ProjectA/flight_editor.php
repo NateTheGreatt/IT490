@@ -35,6 +35,14 @@
     &nbsp;
     <button onclick="grid.setOptions({autoEdit:false})">Auto-edit OFF</button>
   </div>
+  
+  <!--Thing for search-->
+  <div class="search-panel">
+    <h2>Search:</h2>
+    <ul>
+      <input type="text" id="txtSearch" value="00000">
+    </ul>
+  </div>
 </div>
 
 <script src="js/SlickGrid/lib/firebugx.js"></script>
@@ -210,6 +218,15 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
 			error:function (ts) { alert(ts.responseText) }
 		});
 	});
+	
+	<!--This is for the search--> 
+	$("#txtSearch").keyup(function (e) {
+     		if (e.which == 13) {
+        		loader.setSearch($(this).val());
+        		var vp = grid.getViewport();
+        		loader.ensureData(vp.top, vp.bottom);
+      		}
+    	});
 	
   })
 </script>
